@@ -12,7 +12,7 @@ _This website uses a series of questions to help Epicodus students determine wha
 * _Open the index.html file a browser of your choice_
 
 ## GitHub link
-* rloos289.github.io/Epicodus-Track 
+* rloos289.github.io/Track 
 
 ## Licensing
 
