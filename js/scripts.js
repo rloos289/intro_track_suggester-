@@ -1,12 +1,12 @@
 // ***************Back End***************
 var design = 0
-var javascript = 0
+var java = 0
 var web = 0
 var track = ""
 
 var randomTrack = [
   'CSS/Design',
-  'Android/Java',
+  'Android/java',
   'Ruby/Rails'
 ]
 var pickTrack = function () {
@@ -18,31 +18,29 @@ function getRandomName(list) {
   return Math.floor(Math.random() * list.length);
 }
 
-
 var multiChoice = function(answer) {
   if (answer === 'design') {
     design ++;
-  } else if (answer === 'javascript'){
-    javascript ++;
+  } else if (answer === 'java'){
+    java ++;
   } else if (answer === 'all'){
     design ++;
-    javascript ++;
+    java ++;
     web ++;
   } else if (answer === 'ruby'){
     web++;
-  }return design, javascript, web
+  }return design, java, web
 }
 
-//probably a way to shorten this
 var scaleChoice = function(answer) {
-  if (answer === 'javascript + 2') {
-    javascript += 2;
-  } else if (answer === 'javascript + 1') {
-    javascript ++;
-  } else if (answer === 'javascript - 1') {
-    javascript -= 1;
-  } else if (answer === 'javascript - 2') {
-    javascript -= 2;
+  if (answer === 'java + 2') {
+    java += 2;
+  } else if (answer === 'java + 1') {
+    java ++;
+  } else if (answer === 'java - 1') {
+    java -= 1;
+  } else if (answer === 'java - 2') {
+    java -= 2;
   } else if (answer === 'design + 2') {
     design += 2;
   } else if (answer === 'design + 1') {
@@ -51,24 +49,36 @@ var scaleChoice = function(answer) {
     design -= 1
   } else if (answer === 'design - 2') {
     design -= 2
-  } return design, javascript, web
+  } return design, java, web
 }
 
 var results = function() {
-  if (design > javascript && design > web) {
-    track = 'you should take CSS/Design!'
-  } else if (javascript > design && javascript > web) {
-    track = 'you should take Android/Java'
-  } else if (web > design && web >javascript) {
-    track = 'you should take Ruby/Rails!'
+  if (design > java && design > web) {
+    track = 'You should take CSS/Design!'
+  } else if (java > design && java > web) {
+    track = 'You should take Android/java'
+  } else if (web > design && web >java) {
+    track = 'You should take Ruby/Rails!'
+  } else if (web = design) {
+    track = 'You tied between CSS/Design and Ruby/Rails'
+  } else if (web = java) {
+    track = 'You tied between Android/java and Ruby/Rails'
+  } else if (design = java) {
+    track = 'You tied CSS/Design and Android/java and Ruby/Rails'
   } else {
-    track = 'you are indecisive'
+    track = 'Haha very funny, now go back and fill in some answers'
   } return track
-} //figure out tie logic
+}
 
 // ***************Front End***************
   $(function() {
+    $('#randoButton').click(function(event) {
+      var rando = pickTrack();
+      $("#randomize").text(rando).hide().fadeIn(3000);
+    });
+
     $('#submitButton').click(function(event) {
+      var studentName = $('#nameInput').val();
       var an1 = $('input[name=q1]:checked').val();
       var an2 = $('input[name=q2]:checked').val();
       var an3 = $('input[name=q3]:checked').val();
@@ -78,8 +88,5 @@ var results = function() {
       $("#results").text(results());
       event.preventDefault();
     });
-    $('#randoButton').click(function(event) {
-      var rando = pickTrack();
-      $("#randomize").text(rando).hide().fadeIn(3000);
-    });
+
   });

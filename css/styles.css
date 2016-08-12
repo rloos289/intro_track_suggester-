@@ -1,20 +1,23 @@
+/****************Whole Page****************/
+
 body {
   color: #A3A8AC;
   font-weight: normal;
   font-family: 'Open Sans', sans-serif;
 }
 
-#randoButton {
-  height: 40px;
-  width: 200px;
-  background-color: #00B3B4;
-  color: white;
-  border-radius: 8%;
-}
-
 h3 {
   color: #00B3B4;
 }
+
+/****************Heading****************/
+
+.jumbotron {
+  text-align: center;
+  color: #4A4A4A;
+}
+
+/****************Questions****************/
 
 input[type="radio"]{
   margin: 0 10px 0 10px;
@@ -24,11 +27,26 @@ input[type="radio"]{
   font-weight: normal;
 }
 
-.jumbotron {
-  text-align: center;
-  color: #4A4A4A;
-}
 
 h1 {
   font-weight: normal;
+}
+
+/****************Buttons****************/
+
+#randoButton {
+  height: 40px;
+  width: 200px;
+  background-color: #00B3B4;
+  color: white;
+  border-radius: 8%;
+}
+
+#submitButton {
+  margin-left: 40%;
+  margin-top: 50px;
+}
+
+#resultModal {
+  text-align: center;
 }

@@ -11,131 +11,132 @@
     <title>Track Suggester</title>
   </head>
   <body>
-
 <!-- ***************Modal*************** -->
-<div id="resultModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Here are your results</h4>
+    <div id="resultModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Here are your results</h2>
+          </div>
+          <div class="modal-body">
+            <p id="results"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        <p id="results"></p>
+    </div>
+      <div class='container'>
+    <!-- ***************Jumbotron*************** -->
+        <div class='jumbotron'>
+          <h1>Epicodus Track Suggester</h1>
+          <p>Are you unsure what track you should take at Epicodus? Answer the following questions and find out what you are most suited to!</p>
+        </div>
+    <!-- ***************Question 1*************** -->
+      <div class="form-group">
+        <label for="usr">Name:</label>
+        <input type="text" name='nameInput' class="form-control" id="name">
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <form>
+        <H3>Question 1:</H3>
+        <p>What part of the Epicodus curriculum have you enjoyed most so far?</p>
+        <div class='form-check'>
+          <label class='form-check-label'>
+            <input class='form-check-input' type='radio' name='q1' id='design1' value='design'>Designing the look of my website with CSS and Bootstrap
+          </label>
+        </div>
+        <div class='form-check'>
+          <label class='form-check-label'>
+            <input class='form-check-input' type='radio' name='q1' id='javascript1' value='java'>Building the logic behind a website with Javascript and JQuery
+          </label>
+        </div>
+        <div class='form-check'>
+          <label class='form-check-label'>
+            <input class='form-check-input' type='radio' name='q1' id='all1' value='all'>Everything!
+          </label>
+        </div>
+      </form>
+    <!-- ***************Question 2*************** -->
+    <form>
+      <H3>Question 2:</H3>
+      <p>What kind of projects do you want to work on?</p>
+      <div class='form-check'>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q2' id='javascript2' value='java'>Interactive websites
+        </label>
       </div>
-    </div>
-  </div>
-</div>
-    <div class='container'>
-<!-- ***************Jumbotron*************** -->
-      <div class='jumbotron'>
-        <h1>Epicodus Track Suggester</h1>
-        <p>Are you unsure what track you should take at Epicodus? Answer the following questions and find out what you are most suited to!</p>
+      <div class='form-check'>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q2' id='design2' value='design'>Gorgeous websites
+        </label>
       </div>
-<!-- ***************Question 1*************** -->
-  <form>
-    <H3>Question 1:</H3>
-    <p>What part of the Epicodus curriculum have you enjoyed most so far?</p>
-    <div class='form-check'>
-      <label class='form-check-label'>
-        <input class='form-check-input' type='radio' name='q1' id='design1' value='design'>Designing the look of my website with CSS and Bootstrap
-      </label>
-    </div>
-    <div class='form-check'>
-      <label class='form-check-label'>
-        <input class='form-check-input' type='radio' name='q1' id='javascript1' value='javascript'>Building the logic behind a website with Javascript and JQuery
-      </label>
-    </div>
-    <div class='form-check'>
-      <label class='form-check-label'>
-        <input class='form-check-input' type='radio' name='q1' id='all1' value='all'>Everything!
-      </label>
-    </div>
-  </form>
-<!-- ***************Question 2*************** -->
-<form>
-  <H3>Question 2:</H3>
-  <p>What kind of projects do you want to work on?</p>
-  <div class='form-check'>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q2' id='javascript2' value='javascript'>Interactive websites
-    </label>
-  </div>
-  <div class='form-check'>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q2' id='design2' value='design'>Gorgeous websites
-    </label>
-  </div>
-  <div class='form-check'>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q2' id='web2' value='ruby'>Web apps
-    </label>
-  </div>
-</form>
-<!-- ***************Question 3*************** -->
-<form>
-  <H3>Question 3:</H3>
-  <p>On a scale of 1-5 (1 being not at all, 5 being very much) how much do you agree with the following statement?</p>
-  <p>Javascript and jQuery are really frustrating!</p>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q3' id='q3scale1' value='javascript + 2'>1
-    </label>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q3' id='q3scale2' value='javascript + 1'>2
-    </label>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q3' id='q3scale3' value='all'>3
-    </label>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q3' id='q3scale4' value='javascript - 1'>4
-    </label>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q3' id='q3scale5' value='javascript - 2'>5
-    </label>
-</form>
-<!-- ***************Question 4*************** -->
-<form>
-  <H3>Question 4:</H3>
-  <p>On a scale of 1-5 (1 being not at all, 5 being very much) how much do you agree with the following statement?</p>
-  <p>I can find just about anything with a css selector</p>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q4' id='q4scale1' value='design - 2'>1
-    </label>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q4' id='q4scale2' value='design - 1'>2
-    </label>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q4' id='q4scale3' value='all'>3
-    </label>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q4' id='q4scale4' value='design + 1'>4
-    </label>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q4' id='q4scale5' value='design + 2'>5
-    </label>
-</form>
-<!-- ***************Question 5*************** -->
-<form>
-  <H3>Question 5:</H3>
-  <p>When you press the button below, its going to generate a random answer about which course you should take</p>
-  <button type="button" id='randoButton'><p id=randomize></p></button>
-  <p>When the randomization was happening, which answer did you hope it would land on?</p>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q5' id='design5' value='design'>CSS/Design
-    </label>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q5' id='javascript5' value='javascript'>PHP/Drupal
-    </label>
-    <label class='form-check-label'>
-      <input class='form-check-input' type='radio' name='q5' id='web5' value='ruby'>Ruby/Rails
-    </label>
-</form>
-<!-- ***************End of Page**************** -->
-
-<p><button type="button" class="btn btn-primary" id='submitButton' data-toggle="modal" data-target="#resultModal">Submit</button></p>
-    </div>
+      <div class='form-check'>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q2' id='web2' value='ruby'>Web apps
+        </label>
+      </div>
+    </form>
+    <!-- ***************Question 3*************** -->
+    <form>
+      <H3>Question 3:</H3>
+      <p>On a scale of 1-5 (1 being not at all, 5 being very much) how much do you agree with the following statement?</p>
+      <p>Javascript and jQuery are really frustrating!</p>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q3' id='q3scale1' value='java + 2'>1
+        </label>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q3' id='q3scale2' value='java + 1'>2
+        </label>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q3' id='q3scale3' value='all'>3
+        </label>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q3' id='q3scale4' value='java - 1'>4
+        </label>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q3' id='q3scale5' value='java - 2'>5
+        </label>
+    </form>
+    <!-- ***************Question 4*************** -->
+    <form>
+      <H3>Question 4:</H3>
+      <p>On a scale of 1-5 (1 being not at all, 5 being very much) how much do you agree with the following statement?</p>
+      <p>I can find just about anything with a css selector</p>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q4' id='q4scale1' value='design - 2'>1
+        </label>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q4' id='q4scale2' value='design - 1'>2
+        </label>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q4' id='q4scale3' value='all'>3
+        </label>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q4' id='q4scale4' value='design + 1'>4
+        </label>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q4' id='q4scale5' value='design + 2'>5
+        </label>
+    </form>
+    <!-- ***************Question 5*************** -->
+    <form>
+      <H3>Question 5:</H3>
+      <p>When you press the button below, its going to generate a random answer about which course you should take</p>
+      <button type="button" id='randoButton'><p id=randomize></p></button>
+      <p>When the randomization was happening, which answer did you hope it would land on?</p>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q5' id='design5' value='design'>CSS/Design
+        </label>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q5' id='javascript5' value='java'>Android/Java
+        </label>
+        <label class='form-check-label'>
+          <input class='form-check-input' type='radio' name='q5' id='web5' value='ruby'>Ruby/Rails
+        </label>
+    </form>
+    <!-- ***************End of Page**************** -->
+    <p><button type="button" class="btn btn-primary btn-lg center block" id='submitButton' data-toggle="modal" data-target="#resultModal">Get your results</button></p>
   </body>
 </html>
