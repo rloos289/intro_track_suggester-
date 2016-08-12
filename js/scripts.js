@@ -54,19 +54,19 @@ var scaleChoice = function(answer) {
 
 var results = function() {
   if (design > java && design > web) {
-    track = 'You should take CSS/Design!'
+    track = 'you should take CSS/Design!'
   } else if (java > design && java > web) {
-    track = 'You should take Android/java'
+    track = 'you should take Android/java'
   } else if (web > design && web >java) {
-    track = 'You should take Ruby/Rails!'
+    track = 'you should take Ruby/Rails!'
   } else if (web = design) {
-    track = 'You tied between CSS/Design and Ruby/Rails'
+    track = 'you tied between CSS/Design and Ruby/Rails'
   } else if (web = java) {
-    track = 'You tied between Android/java and Ruby/Rails'
+    track = 'you tied between Android/java and Ruby/Rails'
   } else if (design = java) {
-    track = 'You tied CSS/Design and Android/java and Ruby/Rails'
+    track = 'you tied CSS/Design and Android/java and Ruby/Rails'
   } else {
-    track = 'Haha very funny, now go back and fill in some answers'
+    track = 'haha very funny, now go back and fill in some answers'
   } return track
 }
 
@@ -85,8 +85,8 @@ var results = function() {
       var an4 = $('input[name=q4]:checked').val();
       var an5 = $('input[name=q5]:checked').val();
       (multiChoice(an1) + multiChoice(an2) + scaleChoice(an3) + scaleChoice(an4) + multiChoice(an5));
-      $("#results").text(results());
+      var finalOutput = studentName + ", " + results();
+      $("#results").text(finalOutput);
       event.preventDefault();
     });
-
   });
