@@ -4,6 +4,21 @@ var javascript = 0
 var web = 0
 var track = ""
 
+var randomTrack = [
+  'CSS/Design',
+  'Android/Java',
+  'Ruby/Rails'
+]
+var pickTrack = function () {
+  var track = randomTrack[Math.floor(Math.random() * 3)];
+  return track
+}
+
+function getRandomName(list) {
+  return Math.floor(Math.random() * list.length);
+}
+
+
 var multiChoice = function(answer) {
   if (answer === 'design') {
     design ++;
@@ -62,5 +77,9 @@ var results = function() {
       (multiChoice(an1) + multiChoice(an2) + scaleChoice(an3) + scaleChoice(an4) + multiChoice(an5));
       $("#results").text(results());
       event.preventDefault();
+    });
+    $('#randoButton').click(function(event) {
+      var rando = pickTrack();
+      $("#randomize").text(rando).hide().fadeIn(3000);
     });
   });
